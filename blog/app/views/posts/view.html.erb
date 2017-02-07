@@ -1,0 +1,19 @@
+<h1>My Life</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Text</th>
+
+  </tr>
+ 
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.date %></td>
+      <td><%= post.text %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
