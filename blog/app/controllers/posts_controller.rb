@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end 
 
   def new
-    @post = Post.new
+    @post = Post.new  
 	end
 
   def edit
@@ -41,4 +41,20 @@ end
   def post_params
     params.require(:post).permit(:title, :date, :text)
   end
+
+  def destroy
+  @post = Post.find(params[:id])
+  @post.destroy
+ 
+  redirect_to post_path
 end
+
+end
+
+
+
+
+
+
+
+
