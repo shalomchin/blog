@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates_uniqueness_of :title, :case_sensitive => false
   validates :author, presence: true,
                     length: { minimum: 5 }
-
+  validates_format_of :author, :with => /[a-z]/                
 end
 
 
