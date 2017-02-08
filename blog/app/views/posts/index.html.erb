@@ -1,5 +1,27 @@
 <h1>My Life</h1>
  <%= link_to 'New Post', new_post_path %>
+
+
+<% @posts.each do |post| %>
+  <section>
+    <header>
+      <h1><%= post.title %></h1>
+    </header>
+    <article>
+      <p> <%= post.text %> </p>
+    </article>
+    <footer>
+      <%= link_to 'Show', post_path(post) %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'delete', post_path(post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
+    </footer>
+  </section>
+
+<% end %>
+<!-- 
 <table>
   <tr>
     <th>Title</th>
@@ -20,4 +42,4 @@
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
-</table>
+</table> -->
