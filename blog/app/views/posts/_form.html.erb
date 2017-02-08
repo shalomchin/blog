@@ -1,5 +1,5 @@
 
-<%= form_for post do |f| %>
+<%= form_for post,:validate => true do |f| %>
 <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
