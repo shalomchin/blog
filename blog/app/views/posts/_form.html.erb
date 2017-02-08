@@ -1,31 +1,29 @@
 
 <%= form_for post do |f| %>
- 
+ <div class="form-group">
+
    <p>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class=> 'form-control' %>
   </p>
  
 
     <p>
     <%= f.label :date %><br>
-    <%= f.date_field :date %>
+    <%= f.date_field :date, :class=> 'form-control' %>
   </p>
  
   <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, :class=> 'form-control' %>
   </p>
  
  
   <p>
-    <%= f.submit %>
+    <%= f.submit "Update", :class=>'btn btn-default' %>
   </p>
 
  
 <% end %>
-
-  
-
 
   
