@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 	
   def index
-   @posts = Post.order(date: :desc)
+   @posts = Post.all.order(date: :desc)
   end 
 
   def new
@@ -42,7 +42,7 @@ end
   end
 
   def post_params
-    params.require(:post).permit(:title, :date, :text)
+    params.require(:post).permit(:title, :date, :text, :author)
   end
 
   def destroy

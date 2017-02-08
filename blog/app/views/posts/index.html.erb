@@ -9,6 +9,7 @@
     </header>
     <article>
       <p> <%= post.text %> </p>
+      <p> by <%= post.author %> </p>
     </article>
     <footer>
       <%= link_to 'Show', post_path(post), :class=> 'btn btn-success' %>
