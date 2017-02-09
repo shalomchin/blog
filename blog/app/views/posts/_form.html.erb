@@ -1,9 +1,9 @@
 
-<%= form_for post,:validate => true do |f| %>
-<% if @post.errors.any? %>
+<%= form_for @post,:validate => true do |f| %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@post.errors.count, "error") %> prohibited
+        <%= pluralize(post.errors.count, "error") %> prohibited
         this post from being saved:
       </h2>
       <ul>
@@ -13,12 +13,12 @@
       </ul>
     </div>
   <% end %>
-
-   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title, :class=> 'form-control' %>
-  </p>
  
+    <div class="form-group">
+      <%= f.label :title, :class=> "control-label" %>
+      <%= f.text_field :title, :class=> 'form-control' %>
+    </div>
+  
 
     <p>
     <%= f.label :date %><br>

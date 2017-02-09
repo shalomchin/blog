@@ -22,13 +22,9 @@ def update
   end
 end
 
-  def show
-    @post = Post.find(params[:id])
-  end
-
-	def create
-    render plain: params[:post].inspect
-  end
+def show
+  @post = Post.find(params[:id])
+end
 
   def create
   @post = Post.new(post_params)
