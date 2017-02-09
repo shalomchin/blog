@@ -12,4 +12,9 @@
   <strong>Email:</strong>
   <%= comment.email %>
 </p>
+<p>
+  <%= link_to 'Delete', [comment.post, comment], :class=>'btn btn-danger',
+               method: :delete,
+               data: { confirm: 'You fo realzzzz, dawg???' } %>
+</p>
 </br>
