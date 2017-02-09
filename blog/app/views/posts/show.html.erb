@@ -20,23 +20,8 @@ by <%= @post.author %>
 <%= render @post.comments %>
 
 <h2>Add a comment:</h2>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_area :email %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'comments/form' %>
+
 
 <%= link_to 'Edit', edit_post_path( @post ) %>
 <%= link_to 'Back', posts_path, :class=> 'btn btn-success' %>
