@@ -17,20 +17,7 @@ by <%= @post.author %>
 </p>
 
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-    <strong>Name:</strong>
-    <%= comment.name %>
-  </p>
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.comment %>
-  </p>
- 
-  <p>
-    <strong>Email:</strong>
-    <%= comment.email %>
-  </p>
-<% end %>
+<%= render @post.comments %>
 
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
