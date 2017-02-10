@@ -1,20 +1,22 @@
-<p>
-  <strong>Name:</strong>
-  <%= comment.name %>
-</p>
- 
-<p>
-  <strong>Comments:</strong>
-  <%= comment.comment %>
-</p>
+<% if comment.persisted? %>
+	<p>
+	  <strong>Name:</strong>
+	  <%= comment.name %>
+	</p>
+	 
+	<p>
+	  <strong>Comments:</strong>
+	  <%= comment.comment %>
+	</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= comment.email %>
-</p>
-<p>
-  <%= link_to 'Delete', [comment.post, comment], :class=>'btn btn-danger',
-               method: :delete,
-               data: { confirm: 'You fo realzzzz, dawg???' } %>
-</p>
-</br>
+	<p>
+	  <strong>Email:</strong>
+	  <%= comment.email %>
+	</p>
+	<p>
+	  <%= link_to 'Delete', post_comment_path(@post, comment), :class=>'btn btn-danger',
+	               method: :delete,
+	               data: { confirm: 'You fo realzzzz, dawg???' } %>
+	</p>
+	</br>
+<%end%>

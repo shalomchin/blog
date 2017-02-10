@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   has_many :comments
+  accepts_nested_attributes_for :comments
   validates :title, presence: true,
                     length: { in: 15..75 } 
   validates_uniqueness_of :title, :case_sensitive => false
